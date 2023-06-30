@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+use App\Http\Controllers\Backend;
+use App\Http\Controllers\Backend\UserController;
+use App\Http\Controllers\Backend\ProfileController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'
@@ -25,3 +30,33 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'
 });
 
 Route::get('admin.logout', '\App\Http\Controllers\AdminController@logout')->name('admin.logout');
+
+
+// User Managenment All Routes
+
+Route::prefix('users')->group(function(){
+
+    Route::get('/view', [ UserController::class, 'UserView' ])->name('user.view');
+    Route::get('/add', [ UserController::class, 'UserAdd' ])->name('users.add');
+    Route::get('/store', [ UserController::class, 'UserStore' ])->name('users.store');
+    Route::get('/edit/{id}', [ UserController::class, 'UserEdit' ])->name('users.edit');
+    Route::get('/update/{id}', [ UserController::class, 'UserUpdate' ])->name('users.update');
+    Route::get('/delete/{id}', [ UserController::class, 'UserDelete' ])->name('users.delete');
+
+});
+
+
+// User Profile and Change Password
+
+
+Route::prefix('profile')->group(function(){
+
+    Route::get('/view', [ ProfileController::class, 'ProfileView' ])->name('profile.view');
+    Route::get('/edit', [ ProfileController::class, 'ProfileEdit' ])->name('profile.edit');
+  
+
+});
+
+
+
+

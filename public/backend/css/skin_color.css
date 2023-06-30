@@ -858,7 +858,7 @@ body.dark-skin {
 
 .filter
 {
-  filter: contrast(175%) blur(5px)
+  /* filter: contrast(175%) blur(5px) */
 }
 
 .brightest-green {
