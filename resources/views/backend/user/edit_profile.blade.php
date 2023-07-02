@@ -22,7 +22,8 @@
    <div class="box-body">
      <div class="row">
        <div class="col">
-           <form methd="post" action="{{ route('users.update', $editData->id) }}">
+           <form method="post" action="{{ route('profile.store') }}" enctype="multipart/form-data">
+            @csrf
              <div class="row">
                <div class="col-12">
                 
@@ -86,8 +87,8 @@
                         <div class="controls">
                             <select name="gender" id="gender" required="" class="form-control">
                                 <option value="" selected="" disabled="">Select Gender</option>
-                                <option value="Male" {{ $editData->usertype =="Male" ? "selected":""}}>Male</option>
-                                <option value="Female" {{ $editData->usertype =="Female" ? "selected":""}}>Female</option>
+                                <option value="Male" {{ $editData->gender =="Male" ? "selected":""}}>Male</option>
+                                <option value="Female" {{ $editData->gender =="Female" ? "selected":""}}>Female</option>
                             </select>
                         
                           </div><!-- End-controls-->
@@ -108,7 +109,7 @@
                   <div class="form-group">
 
                     <div class="controls">
-                        <img id="showImage" class="rounded-circle" 
+                        <img id="showImage" class="" 
                         src="{{ !(empty($user->image))? url('upload/user_images/'.$user->image) : url('upload/no_image.jpg') }}" 
                         alt="User Avatar" style="width:100px; width:100px; border:1px solid #000000;">
                     </div><!-- End-controls-->
