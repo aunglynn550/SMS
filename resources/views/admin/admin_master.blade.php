@@ -103,7 +103,7 @@
 
 
 	
-	<script src=" https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.js "></sc>
+	<script src=" https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.js "></script>
 	<script>
 		@if(Session::has('message'))
 		var type="{{ Session::get('alert-type','info') }}"
