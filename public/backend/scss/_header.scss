@@ -24,7 +24,7 @@
         @include transition(margin-left .3s ease-in-out);
         margin-left: $sid-bar-w;
         background: rgba($dark3, 1);
-        min-height: $main-hed-nav + 10;
+        min-height: $main-hed-nav + 80;
         padding: 0;
         -webkit-box-shadow: 0 0 21px 0 rgba(89,102,122,0.1);
         box-shadow: 0 0 21px 0 rgba(89,102,122,0.1);

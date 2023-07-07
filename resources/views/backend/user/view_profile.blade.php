@@ -17,11 +17,13 @@
 
 			<div class="box box-widget widget-user">
 					<!-- Add the bg color to the header using any of the bg-* classes -->
+					
 					<div class="widget-user-header bg-black" style="background: url('../images/gallery/full/10.jpg') center center;">
-					  <h3 class="widget-user-username">User Name :{{$user->name}}</h3>
+						<h6 class="widget-user-desc">User Type : {{ $user->usertype }}</h6>
+					  <h3 class="widget-user-username">User Name : {{$user->name}}</h3>
 					  <a href="{{ route('profile.edit') }}" style="float: right;" class="btn btn-rounded btn-success mb-5">Edit Profile</a>
-					  <h6 class="widget-user-desc">User Type :{{ $user->usertype }}</h6>
-					  <h6 class="widget-user-desc">Email :{{ $user->email }}</h6>
+					  
+					  <h6 class="widget-user-desc">Email : {{ $user->email }}</h6>
 					
 					</div>
 					<div class="widget-user-image">

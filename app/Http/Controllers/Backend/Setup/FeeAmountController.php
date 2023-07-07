@@ -33,6 +33,7 @@ class FeeAmountController extends Controller
             $fee_amount->class_id = $request->class_id[$i];
             $fee_amount->amount = $request->amount[$i];
             $fee_amount->save();
+          
             }
 
         }
@@ -75,9 +76,9 @@ class FeeAmountController extends Controller
                 $fee_amount->class_id = $request->class_id[$i];
                 $fee_amount->amount = $request->amount[$i];
                 $fee_amount->save();
-                }
+                }//End For Loop
     
-            }
+            }//End Condition
             $notification = array(
                 'alert-type' => 'info',
                 'message' => 'Data Updated Successfully!',
