@@ -13641,8 +13641,8 @@ Height property
   font-size: 1rem !important;
   line-height: normal !important; }
   .navbar-custom-menu .user-menu a img {
-    width: 69px;
-    height: 66px;
+    width: 55px;
+    height: 50px;
     border-radius: 100px; }
   .navbar-custom-menu .user-menu a:hover, .navbar-custom-menu .user-menu a:focus {
     background-color: transparent !important; }
@@ -14333,7 +14333,8 @@ body .main-header .navbar .nav > li.search-box > a:hover, body .main-header .nav
   .user-profile .ulogo h3 {
     color: #475f7b; }
 .user-profile img {
-  margin: 5px; }
+  margin: 6px 0 0;
+  padding: 4px 0 0; }
 .user-profile .dropdown-menu {
   left: 0px;
   right: 0px;
@@ -24073,3 +24074,14 @@ img.away, img.busy, img.offline, img.online {
   z-index: -1; }
 
 /*# sourceMappingURL=style.css.map */
+
+
+/* Logo Style */
+.logo{
+  width: 70px;
+height: 45px;
+object-fit: cover;
+}
+.logo-text{
+  margin: 0;
+}

@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
 	
-    <link rel="icon" href="{{asset('backend/images/favicon.ico')}}">
+    <link rel="icon" href="{{asset('backend/images/fav-transparent.png')}}">
 
     <title>Easy School Management System - Dashboard</title>
     

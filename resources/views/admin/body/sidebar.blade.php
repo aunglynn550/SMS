@@ -15,8 +15,8 @@ $route = Route::current()->getName();
 				 <a href="index.html">
 				  <!-- logo for regular state and mobile devices -->
 					 <div class="d-flex align-items-center justify-content-center">					 	
-						  <img src="{{asset('backend/images/logo-dark.png')}}" alt="">
-						  <h3><b class="brightest-green">Mr.Aung</b> Admin</h3>
+						  <img class="logo" src="{{asset('backend/images/fav-transparent.png')}}" alt="">
+						  <h3 class="logo-text "><b class="brightest-green">Mr.Aung</b> Admin</h3>
 					 </div>
 				</a>
 			</div>
@@ -79,6 +79,7 @@ $route = Route::current()->getName();
             <li><a href="{{ route('exam.type.view') }}"><i class="ti-more"></i>Exam Type</a></li>
             <li><a href="{{ route('school.subject.view') }}"><i class="ti-more"></i>School Subject</a></li>
             <li><a href="{{ route('assign.subject.view') }}"><i class="ti-more"></i>Assign Subject</a></li>
+            <li><a href="{{ route('designation.view') }}"><i class="ti-more"></i>Designation</a></li>
           </ul>
         </li>
 
