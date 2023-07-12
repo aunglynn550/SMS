@@ -34,7 +34,7 @@
 						<div class="col-sm-4">
 						  <div class="description-block">
 							<h5 class="description-header">Mobile Number</h5>
-							<span class="description-text">{{ $user->mobile }}</span>
+							<span class="description-text">{{ $user->moblie }}</span>
 						  </div>
 						  <!-- /.description-block -->
 						</div>
