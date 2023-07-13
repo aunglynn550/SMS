@@ -17,6 +17,7 @@ use App\Http\Controllers\Backend\Setup\SchoolSubjectController;
 use App\Http\Controllers\Backend\Setup\AssignSubjectController;
 use App\Http\Controllers\Backend\Setup\DesignationController;
 use App\Http\Controllers\Backend\Student\StudentRegController;
+use App\Http\Controllers\Backend\Student\StudentRollController;
 use App\Models\ExamType;
 
 /*
@@ -178,5 +179,11 @@ Route::prefix('students')->group(function(){
     Route::get('reg/promotion/{student_id}', [ StudentRegController::class, 'StudentRegPromotion' ])->name('student.registration.promotion.edit');
     Route::post('reg/update/promotion/{student_id}', [ StudentRegController::class, 'StudentUpdatePromotion' ])->name('promotion.student.registration');
   
+
+    //Student Roll Generate ROutes
+
+    Route::get('roll/generate/view', [ StudentRollController::class, 'StudentRollView' ])->name('roll.generate.view');
+    Route::get('reg/getstudents', [ StudentRollController::class, 'GetStudents' ])->name('student.registration.getstudents');
+    Route::post('roll/generate', [ StudentRollController::class, 'StudentRollStore' ])->name('roll.generate.store');
 
 });
