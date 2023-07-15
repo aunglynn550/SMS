@@ -121,8 +121,9 @@
 													
 								<td>{{ $value->year_id }}</td>						
 								<td>
-									<a href="{{ route('student.registration.edit',$value->student_id) }}" class="btn btn-info">Edit</a>
-									<a href="{{ route('student.registration.promotion.edit',$value->student_id) }}" class="btn btn-danger" >Promotion</a>
+									<a href="{{ route('student.registration.edit',$value->student_id) }}" class="btn btn-info"><i class="fa fa-edit"></i></a>
+									<a href="{{ route('student.registration.promotion.edit',$value->student_id) }}" class="btn btn-danger" ><i class="fa fa-primary"></i></a>
+									<a target="_blank" href="{{ route('student.registration.details',$value->student_id) }}" class="btn btn-danger" ><i class="fa fa-eye"></i></a>
 								</td>
 						
 							</tr>
@@ -173,8 +174,9 @@
 													
 								<td>{{ $value->year_id }}</td>						
 								<td>
-									<a href="{{ route('student.registration.edit',$value->student_id) }}" class="btn btn-info">Edit</a>
-									<a href="{{ route('student.registration.promotion.edit',$value->student_id) }}" class="btn btn-danger" >Promotion</a>
+									<a href="{{ route('student.registration.edit',$value->student_id) }}" class="btn btn-info"><i class="fa fa-edit"></i></a>
+									<a href="{{ route('student.registration.promotion.edit',$value->student_id) }}" class="btn btn-danger" ><i class="fa fa-primary"></i></a>
+									<a target="_blank" href="{{ route('student.registration.details',$value->student_id) }}" class="btn btn-danger" ><i class="fa fa-eye"></i></a>
 								</td>
 						
 							</tr>
