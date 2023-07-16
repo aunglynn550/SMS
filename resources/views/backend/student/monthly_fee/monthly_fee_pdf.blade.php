@@ -24,15 +24,15 @@ tr:nth-child(even) {
 
 <table>
   <tr>
-      
     <td><h2>
-      <?php $image_path = 'backend/images/demo-logo.jpg'  ?>
+      <?php $image_path = '/backend/images/demo-logo.jpg'  ?>
       <img src="{{ public_path() . $image_path }}" width="200" height="100">
     </h2></td>
     <td><h2>Easy School ERP</h2>
     <p>School Address</p> 
     <p>Phone : 34322334</p>
     <p>Email : mraung@cufighter.com</p>
+    <p>Student Monthly Fee</p>
     </td>
   </tr>
   <tr>
@@ -43,7 +43,7 @@ tr:nth-child(even) {
 @php
 
 
-        $registrationfee = App\Models\FeeCategoryAmount::where('fee_category_id','1')
+        $registrationfee = App\Models\FeeCategoryAmount::where('fee_category_id','2')
         ->where('class_id',$details->class_id)->first();
 
 
@@ -72,11 +72,13 @@ tr:nth-child(even) {
     <td><b>Student Name</b></td>
     <td>{{ $details['student']['name'] }}</td>
   </tr>
+
   <tr>
     <td>3</td>
     <td><b>Father's Name</b></td>
     <td>{{ $details['student']['fname'] }}</td>
   </tr>
+
 
   <tr>
     <td>4</td>
@@ -94,7 +96,7 @@ tr:nth-child(even) {
 
   <tr>
     <td>6</td>
-    <td><b>Registration Fee</b></td>
+    <td><b>Monthly Fee</b></td>
     <td>{{ $originalfee }}$</td>
   </tr>
 
@@ -106,7 +108,7 @@ tr:nth-child(even) {
 
   <tr>
     <td>8</td>
-    <td><b>Fee For this Student</b></td>
+    <td><b>Fee For this Student of  {{ $month }}</b></td>
     <td>{{ $finalfee }}$</td>
   </tr>
 
@@ -122,12 +124,14 @@ tr:nth-child(even) {
 
 
 
+
 <table id="customer">
   <tr>
     <th width="10%">SL</th>
     <th width="45%">Student Details</th>
     <th width="45%">Student Data</th>
   </tr>
+
   <tr>
     <td>1</td>
     <td><b>Roll No</b></td>
@@ -139,12 +143,14 @@ tr:nth-child(even) {
     <td><b>Student Name</b></td>
     <td>{{ $details['student']['name'] }}</td>
   </tr>
-
+  
   <tr>
     <td>3</td>
     <td><b>Father's Name</b></td>
     <td>{{ $details['student']['fname'] }}</td>
   </tr>
+
+
   
   <tr>
     <td>4</td>
@@ -162,7 +168,7 @@ tr:nth-child(even) {
 
   <tr>
     <td>6</td>
-    <td><b>Registration Fee</b></td>
+    <td><b>Monthly Fee</b></td>
     <td>{{ $originalfee }}$</td>
   </tr>
 
@@ -174,12 +180,12 @@ tr:nth-child(even) {
 
   <tr>
     <td>8</td>
-    <td><b>Fee For this Student</b></td>
+    <td><b>Fee For this Student of  {{ $month }}</b></td>
     <td>{{ $finalfee }}$</td>
   </tr>
-
-
+ 
 </table>
+
 <br>
 <br>
 
