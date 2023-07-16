@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Backend\Student;
 
 use App\Http\Controllers\Controller;
-use App\Models\AssignSubject;
 use Illuminate\Http\Request;
+use App\Models\AssignSubject;
 use App\Models\AssignStudent;
 use App\Models\User;
 use App\Models\DiscountStudent;

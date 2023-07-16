@@ -21,6 +21,7 @@ use App\Http\Controllers\Backend\Student\StudentRollController;
 use App\Http\Controllers\Backend\Student\RegistrationFeeController;
 use App\Http\Controllers\Backend\Student\MonthlyFeeController;
 use App\Http\Controllers\Backend\Student\ExamFeeController;
+use App\Http\Controllers\Backend\Employee\EmployeeRegController;
 use App\Models\ExamType;
 
 /*
@@ -48,6 +49,13 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'
 Route::get('admin.logout', '\App\Http\Controllers\AdminController@logout')->name('admin.logout');
 
 
+
+Route::group(['middleware' => 'auth'], function(){
+
+
+
+
+
 // User Managenment All Routes
 
 Route::prefix('users')->group(function(){
@@ -64,6 +72,8 @@ Route::prefix('users')->group(function(){
 
 
 
+
+// User Profile and Change Password
 Route::prefix('profile')->group(function(){
 
     Route::get('/view', [ ProfileController::class, 'ProfileView' ])->name('profile.view');
@@ -78,8 +88,6 @@ Route::prefix('profile')->group(function(){
 
 
 
-
-// User Profile and Change Password
 
 Route::prefix('setups')->group(function(){
 
@@ -210,3 +218,21 @@ Route::prefix('students')->group(function(){
 
 
 });
+
+
+
+// Employee Registration Routes
+Route::prefix('employees')->group(function(){
+
+    Route::get('reg/employee/view', [ EmployeeRegController::class, 'EmployeeView' ])->name('employee.registration.view');
+    Route::get('reg/employee/add', [ EmployeeRegController::class, 'EmployeeAdd' ])->name('employee.registration.add');
+    Route::post('reg/employee/store', [ EmployeeRegController::class, 'EmployeeStore' ])->name('store.employee.registration');
+    Route::get('reg/employee/edit/{id}', [ EmployeeRegController::class, 'EmployeeEdit' ])->name('employee.registration.edit');
+    Route::post('reg/employee/update/{id}', [ EmployeeRegController::class, 'EmployeeUpdate' ])->name('update.employee.registration');
+    Route::get('reg/employee/details/{id}', [ EmployeeRegController::class, 'EmployeeDetails' ])->name('employee.registration.details');
+   
+
+});
+
+
+});// End Auth Middleware

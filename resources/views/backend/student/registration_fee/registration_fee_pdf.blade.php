@@ -26,7 +26,7 @@ tr:nth-child(even) {
   <tr>
       
     <td><h2>
-      <?php $image_path = 'backend/images/demo-logo.jpg'  ?>
+      <?php $image_path = '/backend/images/demo-logo.jpg'  ?>
       <img src="{{ public_path() . $image_path }}" width="200" height="100">
     </h2></td>
     <td><h2>Easy School ERP</h2>
@@ -36,6 +36,7 @@ tr:nth-child(even) {
     </td>
   </tr>
   <tr>
+    
 
  
 </table>
