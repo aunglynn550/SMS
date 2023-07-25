@@ -31,6 +31,7 @@ use App\Http\Controllers\Backend\Marks\MarksController;
 use App\Http\Controllers\Backend\Marks\GradeController;
 use App\Http\Controllers\Backend\DefaultController;
 use App\Http\Controllers\Backend\Account\StudentFeeController;
+use App\Http\Controllers\Backend\Account\AccountSalaryController;
 
 
 /*
@@ -310,6 +311,12 @@ Route::prefix('accounts')->group(function(){
     Route::get('student/fee/getstudent', [ StudentFeeController::class, 'StudentFeeGetStudent' ])->name('account.fee.getstudent');
     Route::post('student/fee/store', [ StudentFeeController::class, 'StudentFeeStore' ])->name('account.fee.store');
   
+
+    //Employee Salary Routes
+    Route::get('account/salary/view', [ AccountSalaryController::class, 'AccountSalaryView' ])->name('account.salary.view');
+    Route::get('account/salary/add', [ AccountSalaryController::class, 'AccountSalaryAdd' ])->name('account.salary.add');
+    Route::get('account/salary/getemployee', [ AccountSalaryController::class, 'AccountSalaryGetEmployee' ])->name('account.salary.getemployee');
+    Route::post('account/salary/store', [ AccountSalaryController::class, 'AccountSalaryStore' ])->name('account.salary.store');
 
 });
 
