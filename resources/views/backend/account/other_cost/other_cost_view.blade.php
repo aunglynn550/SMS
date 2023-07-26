@@ -44,7 +44,7 @@
 								<td>{{ $value->amount }}</td>						
 								<td>{{ $value->description }}</td>														                            				
 								<td>
-                                <img class="rounded-circle " src="{{ !(empty($value->image))? url('upload/cost_images/'.$value->image) : url('upload/no_image.jpg') }}"
+                                <img class="rounded-circle" src="{{ !(empty($value->image))? url('upload/cost_images/'.$value->image) : url('upload/no_image.jpg') }}"
                                 style="width: 70px; aspect-ratio:1; " alt="User Avatar">
                                 </td>														                            				
 								                             				
