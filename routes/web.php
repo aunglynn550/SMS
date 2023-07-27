@@ -35,6 +35,7 @@ use App\Http\Controllers\Backend\Account\AccountSalaryController;
 use App\Http\Controllers\Backend\Account\OtherCostController;
 use App\Http\Controllers\Backend\Report\ProfitController;
 use App\Http\Controllers\Backend\Report\MarkSheetController;
+use App\Http\Controllers\Backend\Report\AttendanceReportController;
 
 
 /*
@@ -348,9 +349,15 @@ Route::prefix('reports')->group(function(){
 
 //  MarkSheet Generate Routes
 
-
     Route::get('marksheet/generate/view', [ MarkSheetController::class, 'MarkSheetView' ])->name('marksheet.generate.view');
     Route::get('report/marksheet/get', [ MarkSheetController::class, 'MarkSheetGet' ])->name('report.marksheet.get');
    
+
+
+
+//  Attendance Report Routes
+
+Route::get('attendance/report/view', [ AttendanceReportController::class, 'AttendanceReportView' ])->name('attendance.report.view');
+Route::get('attendance/report/get', [ AttendanceReportController::class, 'AttendanceReportGet' ])->name('report.attendance.get');
 
 });// End Auth Middleware

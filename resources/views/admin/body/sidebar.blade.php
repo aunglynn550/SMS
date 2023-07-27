@@ -177,6 +177,7 @@ $route = Route::current()->getName();
           <ul class="treeview-menu">
             <li class="{{ ($route == 'monthly.profit.view')? 'active' : '' }}"><a href="{{ route('monthly.profit.view') }}"><i class="ti-more"></i>Monthly/ Yearly Profit</a></li>
             <li class="{{ ($route == 'marksheet.generate.view')? 'active' : '' }}"><a href="{{ route('marksheet.generate.view') }}"><i class="ti-more"></i>MarkSheet Generator</a></li>           
+            <li class="{{ ($route == 'attendance.report.view')? 'active' : '' }}"><a href="{{ route('attendance.report.view') }}"><i class="ti-more"></i>Attendance Report</a></li>           
                             
           </ul>
         </li>
