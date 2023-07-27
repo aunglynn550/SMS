@@ -34,6 +34,7 @@ use App\Http\Controllers\Backend\Account\StudentFeeController;
 use App\Http\Controllers\Backend\Account\AccountSalaryController;
 use App\Http\Controllers\Backend\Account\OtherCostController;
 use App\Http\Controllers\Backend\Report\ProfitController;
+use App\Http\Controllers\Backend\Report\MarkSheetController;
 
 
 /*
@@ -342,10 +343,14 @@ Route::prefix('reports')->group(function(){
     Route::get('monthly/profit/datewise', [ ProfitController::class, 'MonthlyProfitDatewise' ])->name('report.profit.datewise.get');
     Route::get('monthly/profit/pdf', [ ProfitController::class, 'MonthlyProfitPdf' ])->name('report.profit.pdf');
    
-
 });
 
 
+//  MarkSheet Generate Routes
 
+
+    Route::get('marksheet/generate/view', [ MarkSheetController::class, 'MarkSheetView' ])->name('marksheet.generate.view');
+    Route::get('report/marksheet/get', [ MarkSheetController::class, 'MarkSheetGet' ])->name('report.marksheet.get');
+   
 
 });// End Auth Middleware
