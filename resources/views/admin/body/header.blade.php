@@ -1,5 +1,5 @@
 
-<header class="main-header">
+<header class="light-skin main-header">
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top pl-30">
       <!-- Sidebar toggle button-->

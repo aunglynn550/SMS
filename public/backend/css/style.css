@@ -13474,6 +13474,18 @@ Height property
     text-align: center;
     line-height: 28px;
     font-size: 1.286rem; }
+
+
+    /* Light Skin Main Header */
+
+    .light-skin.main-header .navbar{
+      background-color: #ffffff;}
+
+
+
+  /*--------------------------------*/
+
+
   .main-header .navbar {
     -moz-transition: margin-left 0.3s ease-in-out;
     -o-transition: margin-left 0.3s ease-in-out;
