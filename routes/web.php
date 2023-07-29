@@ -49,6 +49,9 @@ use App\Http\Controllers\Backend\Report\ResultReportController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['middleware'=> 'prevent-back-history'], function(){
+
+
 
 Route::get('/', function () {
     return view('auth.login');
@@ -367,4 +370,14 @@ Route::get('attendance/report/get', [ AttendanceReportController::class, 'Attend
 Route::get('student/result/view', [ ResultReportController::class, 'ResultView' ])->name('student.result.view');
 Route::get('student/result/get', [ ResultReportController::class, 'ResultGet' ])->name('student.result.report.get');
 
+
+//  Student ID Card Routes
+
+Route::get('student/idcard/view', [ ResultReportController::class, 'IdcardView' ])->name('student.idcard.view');
+Route::get('student/idcard/get', [ ResultReportController::class, 'IdcardGet' ])->name('report.student.idcard.get');
+
 });// End Auth Middleware
+
+
+    
+});//Prevent Back Middleware

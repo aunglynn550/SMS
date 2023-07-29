@@ -9,6 +9,7 @@ use App\Models\StudentYear;
 use App\Models\StudentClass;
 use App\Models\StudentMarks;
 use App\Models\ExamType;
+use App\Models\AssignStudent;
 use niklasravnsborg\LaravelPdf\Facades\Pdf as PDF;
 
 class ResultReportController extends Controller
@@ -37,6 +38,35 @@ class ResultReportController extends Controller
             // dd($data['allData']->toArray());
 
             $pdf = PDF::loadView('backend.report.student_result.student_result_pdf', $data);
+            $pdf->setProtection(['copy','print'], '', 'pass');
+	        return $pdf->stream('document.pdf');
+        }else{
+            $notification = array(
+                'alert-type' => 'error',
+                'message' => 'Sorry! This Criteria Does not Match:)',
+              );
+          
+             return redirect()->back()->with($notification);
+        }
+    }//End Method
+
+    public function IdcardView(){
+        $data['years'] = StudentYear::all();
+        $data['classes'] = StudentClass::all();
+        return view('backend.report.idcard.idcard_view',$data);
+
+    }//End Method
+
+    public function IdcardGet(Request $request){
+        $year_id =$request->year_id;
+        $class_id =$request->class_id;
+
+        $check_data = AssignStudent::where('year_id',$year_id)->where('class_id',$class_id)->first();
+
+        if($check_data ==true ){
+            $data['allData'] = AssignStudent::where('year_id',$year_id)->where('class_id',$class_id)->get();
+            // dd($data['allData']->toArray());
+            $pdf = PDF::loadView('backend.report.idcard.idcard_pdf', $data);
             $pdf->setProtection(['copy','print'], '', 'pass');
 	        return $pdf->stream('document.pdf');
         }else{
